@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
 
 :root{
-    --yellow: #E59500;
-    --dark-yellow: #ad7000;
-    --white: #fff;
-    --red: #840032;
-    --dark-red: #400019;
-    --blue: #002642;
+    --background: #2D3142;
+    --icon-color: #4F5D75;
+    --card-background: #F4F7F5;
+    --text-color: #2D3142;
+    --red: #FF6B6B;
+    --yellow: #D19C1D;
 }
 
 html{
-    background-color: white;
+    background-color: var(--background);
     width: 100%;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
@@ -34,9 +34,11 @@ body{
     width: 400px;
     height: 600px;
     border: 1px solid black;
+    border-radius: 12px;
+    background: var(--card-background);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
     padding: 4px;
 }
@@ -44,22 +46,92 @@ body{
 #creator{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #creator-left{
     display: flex;
+    flex-grow: 2;
+}
+
+#creator-left img{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 #creator-info{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
+    margin-left: 8px;
 }
 
-#button-row{
+#image-container img{
+    width: 390px;
+    height: 390px;
+    object-fit: cover;
+}
+
+#image-container{
+    position:relative;
+}
+
+#image-icon-container{
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+#image-icons{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
+}
+
+#buttons-left{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttons-left i, #buttons-right i, #button-row i{
+    font-size: 24px;
+    color: var(--icon-color);
+    padding: 8px;
+}
+
+#buttons-left i:hover, #buttons-right i:hover, #button-row i:hover{
+    font-size: 24px;
+    color: var(--icon-color);
+    padding: 8px;
+}
+
+.bi-heart-fill{
+    color: var(--red) !important;
+}
+
+.bi-bookmark-fill{
+    color: var(--yellow) !important;
+}
+
+#buttons-right{
+    flex-grow: 8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#creator i{
+    font-size: 24px;
+    color: var(--icon-color);
 }

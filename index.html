@@ -1,41 +1,81 @@
+
+<!--Color palette: https://coolors.co/2d3142-4f5d75-f4f7f5-ff6b6b-d19c1d-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="modern-normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Media card</title>
+
+    <!-- Script to change the icon fill of the like and save buttons when clicked -->
+    <script type="text/javascript">
+        function buttonClicked(x) {
+            if (x.classList.contains("bi-heart")) {
+            x.classList.remove("bi-heart");
+            x.classList.add("bi-heart-fill");
+            }
+            
+            else if (x.classList.contains("bi-heart-fill")) {
+            x.classList.add("bi-heart");
+            x.classList.remove("bi-heart-fill");
+            }
+
+            else if (x.classList.contains("bi-bookmark")) {
+            x.classList.remove("bi-bookmark");
+            x.classList.add("bi-bookmark-fill");
+            }
+            
+            else if (x.classList.contains("bi-bookmark-fill")) {
+            x.classList.add("bi-bookmark");
+            x.classList.remove("bi-bookmark-fill");
+            }
+        }
+    </script>
+
+    <title>Media Card</title>
 </head>
 <body>
     <div id="container">
         <div id="card">
             <div id="creator">
                 <span id="creator-left">
-                    <img src="https://placehold.co/48" alt="48x48 image placeholder">
+                    <img src="pfp.jpg" alt="User icon">
                     <span id="creator-info">
-                        <p><b>creatorname</b></p>
-                        <p>19 hours ago</p>
+                        <p><b>emo_god</b></p>
+                        <p>2 minutes ago</p>
                     </span>
                 </span>
-                    <img src="https://placehold.co/24x48" alt="menu item">
+                <i class="bi bi-three-dots"></i>
             </div>
             <div id="image-container">
-                <img src="https://placehold.co/392" alt="400x400 placeholder">
+                <img src="image1.jpg" alt="Main content">
+                <div id="image-icon-container">
+                    <div id="image-icons">
+                        <span id="buttons-left">
+                            <i class="bi bi-heart" onclick="buttonClicked(this)"></i>
+                            <i class="bi bi-chat-dots"></i>
+                            <i class="bi bi-box-arrow-up"></i>
+                        </span>
+                            <span id="buttons-right">
+                                <i class="bi bi-bookmark" onclick="buttonClicked(this)"></i>
+                            </span>
+                    </div>
+                </div>
             </div>
+            
             <div id="image-icons">
-                <p>Image overlay icons here</p>
-            </div>
-
-            <div id="button-row">
                 <span id="buttons-left">
-                    <img src="https://placehold.co/24" alt="icon placeholder">
-                    <img src="https://placehold.co/24" alt="icon placeholder">
-                    <img src="https://placehold.co/24" alt="icon placeholder">
+                    <i class="bi bi-heart" onclick="buttonClicked(this)"></i>
+                    <i class="bi bi-chat-dots"></i>
+                    <i class="bi bi-box-arrow-up"></i>
                 </span>
-                    <img src="https://placehold.co/24" alt="icon placeholder">
+                    <span id="buttons-right">
+                        <i class="bi bi-bookmark" onclick="buttonClicked(this)"></i>
+                    </span>
             </div>
-
             <div id="wholiked">
                 <p><b>Jane Doe</b> and 6 others liked this.</p>
             </div>
