@@ -3,10 +3,18 @@
 :root{
     --background: #2D3142;
     --icon-color: #4F5D75;
+    --icon-color-light: #738095;
     --card-background: #F4F7F5;
     --text-color: #2D3142;
     --red: #FF6B6B;
     --yellow: #D19C1D;
+
+    --padding: 8px;
+    --padding-min: 4px;
+}
+
+a:not(.readmore) {
+    text-decoration: none;
 }
 
 html{
@@ -33,14 +41,15 @@ body{
 #card{
     width: 400px;
     height: 600px;
-    border: 1px solid black;
+    border: 1px solid var(--card-background);
     border-radius: 12px;
     background: var(--card-background);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    padding: 4px;
+    padding: var(--padding);
+    box-shadow: 0 1px 16px rgba(0,0,0,1);
 }
 
 #creator{
@@ -70,9 +79,10 @@ body{
 }
 
 #image-container img{
-    width: 390px;
-    height: 390px;
+    width: 382px;
+    height: 382px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 #image-container{
@@ -82,14 +92,20 @@ body{
 #image-icon-container{
     left: 0;
     position: absolute;
-    top: 0;
+    bottom: 2px;
+
+    padding: var(--padding-min);
 
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0px 0px 8px 8px;
+
 }
 
 #image-icons{
@@ -108,13 +124,13 @@ body{
 #buttons-left i, #buttons-right i, #button-row i{
     font-size: 24px;
     color: var(--icon-color);
-    padding: 8px;
+    padding: var(--padding);
 }
 
 #buttons-left i:hover, #buttons-right i:hover, #button-row i:hover{
     font-size: 24px;
-    color: var(--icon-color);
-    padding: 8px;
+    color: var(--icon-color-light);
+    padding: var(--padding);
 }
 
 .bi-heart-fill{
@@ -135,3 +151,104 @@ body{
     font-size: 24px;
     color: var(--icon-color);
 }
+
+#description{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.desc-title{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4px;
+}
+
+.desc-content p{
+    height: 2.4em;
+    overflow: hidden;
+    margin: 0;
+}
+
+.readmore{
+    color: var(--icon-color);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.mention{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* .avatar{
+    display: inline;
+    vertical-align: middle;
+} */
+
+.avatar-image{
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
+
+#follow-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.follow-button {
+    display: inline-block;
+    font-weight: 500;
+    margin: 4px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    background: none;
+    outline: none;
+    border: medium;
+  } 
+   
+.follow-button::before {
+    content: "";
+    height: 40px;
+    position: absolute;
+    bottom: -1px;
+    left: 10px;
+    right: 10px;
+    z-index: 0;
+    border-radius: 2em;
+    filter: blur(14px) brightness(0.9);
+  } 
+   
+.follow-button span {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-out 0s;
+    padding: 16px 60px;
+    border-radius: 50em;
+    position: relative;
+    z-index: 2;
+    will-change: transform, filter;
+
+    background: var(--red);
+  } 
+   
+.follow-button:hover {
+    color: rgb(255, 255, 255);
+  } 
+   
+.follow-button:hover span {
+    filter: brightness(0.9) contrast(1.2);
+    transform: scale(0.96);
+  } 
+   
+.follow-button:hover::before {
+    bottom: 8px;
+    filter: blur(6px) brightness(0.8);
+    left: 15px;
+    right: 15px;
+  }
